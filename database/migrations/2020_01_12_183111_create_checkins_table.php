@@ -16,6 +16,7 @@ class CreateCheckinsTable extends Migration
         Schema::create('checkins', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('user_id')->references('id')->on('users');
+            // TODO: add drink_id reference later
             // $table->string('drink_id')->references('id')->on('drinks');
             $table->string('measure_id')->references('id')->on('measures');
             $table->string('serving_style_id')->references('id')->on('serving_styles');

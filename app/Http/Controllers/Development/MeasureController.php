@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Development;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Measure;
+use Illuminate\Http\Request;
 
 class MeasureController extends Controller
 {
@@ -28,17 +28,5 @@ class MeasureController extends Controller
         $measures = Measure::all();
 
         return view('development.measure.index', ['measures' => $measures]);
-    }
-
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        return view('development.measure.show');
     }
 }

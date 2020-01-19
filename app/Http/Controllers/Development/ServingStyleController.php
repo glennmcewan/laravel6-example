@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Development;
 
-use App\Models\ServingStyle;
 use App\Http\Controllers\Controller;
+use App\Models\ServingStyle;
 use Illuminate\Http\Request;
 
 class ServingStyleController extends Controller
@@ -28,16 +28,5 @@ class ServingStyleController extends Controller
         $servingStyles = ServingStyle::all();
 
         return view('development.serving_style.index', ['servingStyles' => $servingStyles]);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        return view('development.serving_style.show');
     }
 }

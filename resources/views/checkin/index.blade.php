@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 <div class="container">
     <h1>Checkins</h1>
     <p>A basic listing of all checkins.</p>
