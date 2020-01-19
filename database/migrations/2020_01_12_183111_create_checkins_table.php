@@ -20,7 +20,7 @@ class CreateCheckinsTable extends Migration
             $table->string('measure_id')->references('id')->on('measures');
             $table->string('serving_style_id')->references('id')->on('serving_styles');
             $table->float('rating');
-            $table->string('comment');
+            $table->string('comment')->nullable();
             $table->timestamps();
         });
     }
