@@ -28,12 +28,6 @@ class CheckinController extends Controller
     {
         $checkins = Checkin::all();
 
-        // dump($checkin = Checkin::first());
-        // dump($checkin->user);
-        // dump($checkin->measure);
-        // dump($checkin->servingStyle);
-        // exit;
-
         return view('checkin.index', ['checkins' => $checkins]);
     }
 
