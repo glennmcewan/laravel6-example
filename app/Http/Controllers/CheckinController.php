@@ -61,23 +61,27 @@ class CheckinController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->post();
-        $data['user'] = auth()->user()->id;
+        $validated = $request->validate(
+            [
+                'measure' => ['required', 'numeric'],
+                'serving_style' => ['required', 'numeric'],
+                'rating' => ['nullable', 'integer'],
+                'comment' => ['nullable', 'string', 'max:255'],
+            ]
+        );
 
         $checkin = new Checkin;
 
-        $checkin->user_id = auth()->user()->id;
-        $checkin->measure_id = $data['measure'];
-        $checkin->serving_style_id = $data['serving_style'];
-        $checkin->comment = $data['comment'];
-        $checkin->rating = $data['rating'];
+        $checkin->user()->associate(auth()->user()->id);
+        $checkin->measure()->associate($validated['measure']);
+        $checkin->servingStyle()->associate($validated['serving_style']);
+
+        $checkin->comment = $validated['comment'];
+        $checkin->rating = $validated['rating'];
 
         $checkin->save();
 
-        // dump($data);
-        // exit;
-
-        return redirect('checkin.index')->with('success', 'Checked in!');
+        return redirect()->route('checkin.index')->with('success', 'Checked in!');
     }
 
     /**

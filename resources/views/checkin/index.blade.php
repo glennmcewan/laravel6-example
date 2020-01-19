@@ -23,6 +23,7 @@
                 <td>{{ $checkin->user->name }}</td>
                 <td>{{ $checkin->measure->display_name }}</td>
                 <td>{{ $checkin->servingStyle->display_name }}</td>
+                <td>{{ $checkin->rating }}</td>
             </tr>
             @endforeach
         </tbody>
