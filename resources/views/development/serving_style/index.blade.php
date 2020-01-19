@@ -16,11 +16,11 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($servingStyles as $servingStyles)
+            @foreach ($servingStyles as $servingStyle)
             <tr>
-                <td>{{ $servingStyles->id }}</td>
-                <td>{{ $servingStyles->slug }}</td>
-                <td>{{ $servingStyles->display_name }}</td>
+                <td>{{ $servingStyle->id }}</td>
+                <td>{{ $servingStyle->slug }}</td>
+                <td>{{ $servingStyle->display_name }}</td>
             </tr>
             @endforeach
         </tbody>
