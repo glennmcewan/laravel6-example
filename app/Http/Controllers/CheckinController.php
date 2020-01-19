@@ -63,9 +63,9 @@ class CheckinController extends Controller
     {
         $validated = $request->validate(
             [
-                'measure' => ['required', 'numeric'],
-                'serving_style' => ['required', 'numeric'],
-                'rating' => ['nullable', 'integer'],
+                'measure' => ['required', 'integer'],
+                'serving_style' => ['required', 'integer'],
+                'rating' => ['nullable', 'numeric'],
                 'comment' => ['nullable', 'string', 'max:255'],
             ]
         );
