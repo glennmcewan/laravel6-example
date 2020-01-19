@@ -11,7 +11,7 @@
                 <a class="nav-link" href="{{ route('home') }}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('checkin.index') }}">Check in</a>
+                <a class="nav-link" href="{{ route('checkin.create') }}">Check in</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
