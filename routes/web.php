@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('home', ['title' => 'Home']);
 })->name('home');
 
-Route::get('/example', 'ExampleController@index')->name('example.index');
+Route::resource('checkin', 'CheckinController');
+
+Route::get('/measure', 'Development\\MeasureController@index')->name('measure.index');
+
+Route::get('/serving-styles', 'Development\\ServingStyleController@index')->name('serving_style.index');
 
 Auth::routes();
